@@ -1,0 +1,86 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: cpp build active file",
+			"command": "/usr/bin/g++-11",
+			"args": [
+				"--std=c++1z",
+				"-g3",
+				"-fopenmp",
+				"-DDEBUG",
+				"-lgomp",
+				"-march=native",
+				"-mavx2",
+				"-Werror",
+				"${fileDirname}/*.cpp",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: cpp build active file O1",
+			"command": "/usr/bin/g++-11",
+			"args": [
+				"--std=c++1z",
+				"-g3",
+				"-fopenmp",
+				"-lgomp",
+				"-O1",
+				"-march=native",
+				"-mavx2",
+				"-Werror",
+				"${fileDirname}/*.cpp",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "cppbuild",
+			"label": "C/C++: release",
+			"command": "/usr/bin/g++-11",
+			"args": [
+				"--std=c++1z",
+				"-march=native",
+				"-mavx2",
+				"-Werror",
+				"-O3",
+				"-g3",
+				"-fopenmp",
+				"-lgomp",
+				"${fileDirname}/*.cpp",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		}
+	]
+}
